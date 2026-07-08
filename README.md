@@ -12,13 +12,14 @@ Système d'authentification complet avec JWT, gestion des rôles, refresh token 
 
 ##  Fonctionnalités
 
-- ✅ Inscription et connexion avec JWT
-- ✅ Refresh token et révocation
-- ✅ Gestion des rôles (admin, manager, utilisateur)
-- ✅ Réinitialisation de mot de passe par email
-- ✅ Profil utilisateur complet
-- ✅ Journalisation des connexions
-- ✅ **Déployé sur IBM Cloud (IBM Code Engine)**
+Inscription et connexion avec JWT
+Refresh token et révocation
+Gestion des rôles (admin, manager, utilisateur)
+Réinitialisation de mot de passe par email
+Profil utilisateur complet
+urnalisation des connexions
+
+##Déployé sur IBM Cloud (IBM Code Engine)
 
 
 ## Stack technique
