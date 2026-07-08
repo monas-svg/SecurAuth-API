@@ -1,4 +1,4 @@
-# 🔐 SecureAuth API — Authentification JWT avec Django REST Framework
+#  SecureAuth API — Authentification JWT avec Django REST Framework
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![Django](https://img.shields.io/badge/Django-4.2-green?logo=django)
@@ -10,7 +10,7 @@ Système d'authentification complet avec JWT, gestion des rôles, refresh token 
 
 ---
 
-## 🚀 Fonctionnalités
+##  Fonctionnalités
 
 - ✅ Inscription et connexion avec JWT
 - ✅ Refresh token et révocation
@@ -20,16 +20,8 @@ Système d'authentification complet avec JWT, gestion des rôles, refresh token 
 - ✅ Journalisation des connexions
 - ✅ **Déployé sur IBM Cloud (IBM Code Engine)**
 
----
 
-## 🌐 Démo en ligne
-
-API déployée sur IBM Cloud :  
-`https://secure-auth-api.us-south.codeengine.appdomain.cloud/api/`
-
----
-
-## 🛠️ Stack technique
+## Stack technique
 
 | Technologie | Usage |
 |---|---|
@@ -42,7 +34,7 @@ API déployée sur IBM Cloud :
 
 ---
 
-## ⚙️ Installation locale
+## Installation locale
 
 ```bash
 git clone https://github.com/monas-svg/secure-auth-api.git
@@ -56,7 +48,7 @@ python manage.py runserver
 
 ---
 
-## 📡 Endpoints
+## Endpoints
 
 | Méthode | Endpoint | Description |
 |---|---|---|
@@ -71,7 +63,7 @@ python manage.py runserver
 
 ---
 
-## ☁️ Déploiement IBM Cloud
+## Déploiement IBM Cloud
 
 ```bash
 # Build et push de l'image
@@ -90,7 +82,7 @@ ibmcloud ce application create \
 
 ---
 
-## 🔑 Exemple d'utilisation
+## Exemple d'utilisation
 
 ```bash
 # Inscription
@@ -103,10 +95,3 @@ curl -X POST http://localhost:8000/api/auth/login/ \
   -H "Content-Type: application/json" \
   -d '{"email": "john@email.com", "password": "SecurePass123!"}'
 ```
-
----
-
-## 👤 Auteur
-
-**Mohamed Nasser Mounchikpou Njiemessa**  
-[GitHub](https://github.com/monas-svg) · [LinkedIn](https://linkedin.com/in/mohamed-nasser-mounchikpou-njiemessa-6b604a233)
