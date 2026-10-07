@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Connexion | SecureAuth{% endblock %}
+
+{% block content %}
+<section class="form-card card">
+  <div class="form-header">
+    <p class="eyebrow">Bienvenue</p>
+    <h2>Connexion</h2>
+  </div>
+
+  <form id="loginForm">
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="nom@entreprise.com" required />
+    </div>
+
+    <div class="field">
+      <label for="password">Mot de passe</label>
+      <input id="password" name="password" type="password" placeholder="••••••••" required />
+    </div>
+
+    <button class="button primary full" type="submit">Se connecter</button>
+    <div id="loginMessage" class="message" aria-live="polite"></div>
+  </form>
+
+  <p class="text-link">
+    Vous n’avez pas de compte ?
+    <a href="{% url 'web-register' %}">Créer un compte</a>
+  </p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('loginForm');
+    const messageBox = document.getElementById('loginMessage');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const payload = {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+      };
+
+      try {
+        const response = await fetch('/api/auth/login/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.detail || data.error || 'Identifiants invalides.');
+        }
+
+        localStorage.setItem('access_token', data.tokens.access);
+        localStorage.setItem('refresh_token', data.tokens.refresh);
+        localStorage.setItem('user', JSON.stringify(data.user));
+
+        messageBox.textContent = 'Connexion réussie.';
+        messageBox.classList.add('success');
+        setTimeout(() => window.location.href = '{% url "web-profile" %}', 700);
+      } catch (error) {
+        messageBox.textContent = error.message;
+        messageBox.classList.add('error');
+      }
+    });
+  });
+</script>
+{% endblock %}

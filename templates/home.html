@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil | SecureAuth{% endblock %}
+
+{% block content %}
+<section class="hero card">
+  <div>
+    <p class="eyebrow">Sécurité numérique</p>
+    <h1>Une authentification simple, rapide et fiable.</h1>
+    <p class="lead">
+      Gérez les comptes utilisateurs, les sessions JWT et les accès avec une interface légère pensée pour la productivité.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="{% url 'web-register' %}">Créer un compte</a>
+      <a class="button secondary" href="{% url 'web-login' %}">Se connecter</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <div class="stat-box">
+      <span>Session</span>
+      <strong>JWT</strong>
+    </div>
+    <div class="stat-box">
+      <span>Protection</span>
+      <strong>JWT + blacklist</strong>
+    </div>
+    <div class="stat-box">
+      <span>UX</span>
+      <strong>Minimaliste</strong>
+    </div>
+  </div>
+</section>
+{% endblock %}
