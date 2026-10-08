@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
 
 {% block title %}Profil | SecureAuth{% endblock %}
+{% block body_class %}auth-page{% endblock %}
 
 {% block content %}
-<section class="profile-card card">
-  <div class="form-header">
-    <p class="eyebrow">Compte</p>
-    <h2>Mon profil</h2>
+<section class="auth-shell">
+  <div class="auth-panel auth-form-panel">
+    <h1>MY PROFILE</h1>
+    <p class="login-subtitle">Manage your account details securely.</p>
+
+    <div id="profileContent" class="profile-content">
+      <p>Chargement du profil...</p>
+    </div>
   </div>
 
-  <div id="profileContent" class="profile-content">
-    <p>Chargement du profil...</p>
-  </div>
+  <div class="auth-panel auth-visual" aria-hidden="true"></div>
 </section>
 {% endblock %}
 

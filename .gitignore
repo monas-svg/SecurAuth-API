@@ -23,3 +23,11 @@ db.sqlite3
 # OS
 .DS_Store
 Thumbs.db
+
+# Ajouts
+.venv/
+venv/
+.env
+db.sqlite3
+__pycache__/
+*.pyc

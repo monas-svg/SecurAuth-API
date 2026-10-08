@@ -87,7 +87,7 @@ ibmcloud ce application create \
 
 ```bash
 # Inscription
-curl -X POST http://localhost:8000/api/auth/register/ \
+curl -X POST http://localhost:9000/api/auth/register/ \
   -H "Content-Type: application/json" \
   -d '{"username": "john", "email": "john@email.com", "password": "SecurePass123!"}'
 
